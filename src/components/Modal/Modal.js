@@ -15,7 +15,7 @@ const Modal = ({ modalImage, closeModal }) => {
 };
 
 Modal.propTypes = {
-  modalImage: PropTypes.func.isRequired,
+  modalImage: PropTypes.string.isRequired,
   closeModal: PropTypes.func.isRequired,
 };
 

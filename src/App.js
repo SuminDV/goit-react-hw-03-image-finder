@@ -32,10 +32,13 @@ export default class App extends Component {
 
   openModal = modalImage => {
     this.setState({ isModalOpen: true, modalImage });
+    window.addEventListener('keydown', this.closeModal);
   };
 
-  closeModal = e => {
-    if (e.target === e.currentTarget) this.setState({ isModalOpen: false });
+  closeModal = evt => {
+    if (evt.target === evt.currentTarget || evt.keyCode === 27)
+      this.setState({ isModalOpen: false });
+    window.removeEventListener('keydown', this.closeModal);
   };
 
   onSubmit = query => {
